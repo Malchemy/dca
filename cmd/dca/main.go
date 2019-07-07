@@ -59,7 +59,7 @@ var (
 func init() {
 
 	flag.StringVar(&InFile, "i", "pipe:0", "infile")
-	flag.IntVar(&Volume, "vol", 256, "change audio volume (256=normal)")
+	flag.IntVar(&Volume, "vol", 85, "change audio volume (256=normal)")
 	flag.IntVar(&Channels, "ac", 2, "audio channels")
 	flag.IntVar(&FrameRate, "ar", 48000, "audio sampling rate")
 	flag.IntVar(&FrameDuration, "as", 20, "audio frame duration can be 20, 40, or 60 (ms)")
