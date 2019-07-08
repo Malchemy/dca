@@ -202,7 +202,7 @@ func (e *EncodeSession) run() {
 		"-f", "ogg",
 		"-vbr", vbrStr,
 		"-compression_level", strconv.Itoa(e.options.CompressionLevel),
-		"-volume 0.2",
+		"-volume", "0.5",
 		"-ar", strconv.Itoa(e.options.FrameRate),
 		"-ac", strconv.Itoa(e.options.Channels),
 		"-b:a", strconv.Itoa(e.options.Bitrate * 1000),
