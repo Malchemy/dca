@@ -89,7 +89,7 @@ func (opts *EncodeOptions) Validate() error {
 
 // StdEncodeOptions is the standard options for encoding
 var StdEncodeOptions = &EncodeOptions{
-	Volume:           0.2,
+	Volume:           "0.2",
 	Channels:         2,
 	FrameRate:        48000,
 	FrameDuration:    20,
