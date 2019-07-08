@@ -35,7 +35,7 @@ var (
 
 // EncodeOptions is a set of options for encoding dca
 type EncodeOptions struct {
-	//Volume           string              // change audio volume (1=normal)
+	Volume           float32              // change audio volume (1=normal)
 	Channels         int              // audio channels
 	FrameRate        int              // audio sampling rate (ex 48000)
 	FrameDuration    int              // audio frame duration can be 20, 40, or 60 (ms)
@@ -89,7 +89,7 @@ func (opts *EncodeOptions) Validate() error {
 
 // StdEncodeOptions is the standard options for encoding
 var StdEncodeOptions = &EncodeOptions{
-	//Volume:           "0.2",
+	Volume:           0.2,
 	Channels:         2,
 	FrameRate:        48000,
 	FrameDuration:    20,
@@ -202,7 +202,7 @@ func (e *EncodeSession) run() {
 		"-f", "ogg",
 		"-vbr", vbrStr,
 		"-compression_level", strconv.Itoa(e.options.CompressionLevel),
-		"-volume", "0.2",
+		"-volume 0.2",
 		"-ar", strconv.Itoa(e.options.FrameRate),
 		"-ac", strconv.Itoa(e.options.Channels),
 		"-b:a", strconv.Itoa(e.options.Bitrate * 1000),
