@@ -35,7 +35,7 @@ var (
 
 // EncodeOptions is a set of options for encoding dca
 type EncodeOptions struct {
-	Volume           float64              // change audio volume (1=normal)
+	Volume           string              // change audio volume (1=normal)
 	Channels         int              // audio channels
 	FrameRate        int              // audio sampling rate (ex 48000)
 	FrameDuration    int              // audio frame duration can be 20, 40, or 60 (ms)
@@ -63,9 +63,6 @@ func (e EncodeOptions) PCMFrameLen() int {
 
 // Validate returns an error if the options are not correct
 func (opts *EncodeOptions) Validate() error {
-	if opts.Volume < 0 || opts.Volume > 512 {
-		return errors.New("Out of bounds volume (0-512)")
-	}
 
 	if opts.FrameDuration != 20 && opts.FrameDuration != 40 && opts.FrameDuration != 60 {
 		return errors.New("Invalid FrameDuration")
