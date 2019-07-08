@@ -35,7 +35,7 @@ var (
 
 // EncodeOptions is a set of options for encoding dca
 type EncodeOptions struct {
-	Volume           int              // change audio volume (1=normal)
+	Volume           float              // change audio volume (1=normal)
 	Channels         int              // audio channels
 	FrameRate        int              // audio sampling rate (ex 48000)
 	FrameDuration    int              // audio frame duration can be 20, 40, or 60 (ms)
